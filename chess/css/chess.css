@@ -1,0 +1,14 @@
+.placeXY {
+    height: 70px;
+    width: 70px;
+    perspective: 1000px;
+}
+
+.pieceContainer {
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    padding: 10px; /* this will control the 'Vertical Center Align' */
+    font-size: 35px;
+}

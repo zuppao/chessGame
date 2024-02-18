@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess Game</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css" />
+
+    <!-- AdminLTE -->
+    <link rel="stylesheet" href="./lib/adminlte/css/adminlte.min.css" />
+    <!-- Game CSS -->
+    <link rel="stylesheet" href="./css/chess.css" />
+    
+    <!-- Font-awesome -->
+    <script src="https://kit.fontawesome.com/8ab63282bb.js" crossorigin="anonymous"></script>
+</head>
+<body class="sidebar-collapse">
+    <!-- jQuery -->
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <!-- jQuery-UI -->
+    <!--<script src="./lib/jquery-ui/jquery-ui.min.js"></script>-->
+    <!-- Bootstrap 4 -->
+    <script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE -->
+    <script src="./lib/adminlte/js/adminlte.min.js"></script>
+
+
+
+    <div class="wrapper">
+        <main role="main">
+            <div class="content-wrapper">
+                <!-- Main content -->
+                <section class="content p-3">
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <audio id="sfxFlip" src="./sfx/flipcard.wav" preload="auto"></audio>
+                            <audio id="sfxFlip2" src="./sfx/flipcard2.wav" preload="auto"></audio>
+                            <audio id="sfxWin2" src="./sfx/win2.wav" preload="auto"></audio>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <div class="row justify-content-between">
+                                        <div class="col-auto pt-2">
+                                            <h5>Chess Game</h5>
+                                        </div>
+                                        <div class="col-auto">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" >
+                                    <div class="row">
+                                        <div class="col-auto"></div>
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col text-center text-primary text-bold">a</div>
+                                                <div class="col text-center text-primary text-bold">b</div>
+                                                <div class="col text-center text-primary text-bold">c</div>
+                                                <div class="col text-center text-primary text-bold">d</div>
+                                                <div class="col text-center text-primary text-bold">e</div>
+                                                <div class="col text-center text-primary text-bold">f</div>
+                                                <div class="col text-center text-primary text-bold">g</div>
+                                                <div class="col text-center text-primary text-bold">h</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">8</div></div>
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">7</div></div>
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">6</div></div>
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">5</div></div>
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">4</div></div>
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">3</div></div>
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">2</div></div>
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">1</div></div>
+                                        </div>
+                                        <div class="col-auto" id="board"></div>
+                                        <div class="col-auto">
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">8</div></div>
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">7</div></div>
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">6</div></div>
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">5</div></div>
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">4</div></div>
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">3</div></div>
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">2</div></div>
+                                            <div class="row"><div class="col d-flex align-items-center text-primary text-bold" style="height: 70px;">1</div></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-auto"></div>
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col text-center text-primary text-bold">a</div>
+                                                <div class="col text-center text-primary text-bold">b</div>
+                                                <div class="col text-center text-primary text-bold">c</div>
+                                                <div class="col text-center text-primary text-bold">d</div>
+                                                <div class="col text-center text-primary text-bold">e</div>
+                                                <div class="col text-center text-primary text-bold">f</div>
+                                                <div class="col text-center text-primary text-bold">g</div>
+                                                <div class="col text-center text-primary text-bold">h</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto"></div>
+                                    </div>
+
+                                </div>
+
+                                <div class="card-footer">
+                                    <div class="row justify-content-between">
+                                        <div class="col-auto">
+                                            <button class="btn bg-gradient-danger" id="btRestart">
+                                                Restart <i class="fas fa-redo-alt"></i>
+                                            </button>
+                                        </div>
+                                        <div class="col-auto d-flex align-items-center">
+                                            Turn:&nbsp;&nbsp;<label id="lbTurn" class="" style="margin: 0 !important;"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+
+
+    <!-- Game JS -->
+    <script src="js/class/Game.js"></script>
+    <script src="js/class/Moviment.js"></script>
+    <script src="js/class/Piece.js"></script>
+    <script src="js/class/Place.js"></script>
+    <script src="js/class/Player.js"></script>
+    <script src="js/chess.js"></script>
+
+</body>
+</html>
